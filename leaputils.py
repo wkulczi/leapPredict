@@ -111,13 +111,13 @@ def getFingerBones(finger: Leap.Finger, withMetacarpal=False):
     return fingerBones
 
 
-def getFingerJoints(finger: Leap.Finger, mainImage, withMetacarpal=False, withColors=False):
+def getFingerJoints(finger: Leap.Finger, mainImage, withMetacarpal=False, withColors=False, targetWidth=400, targetHeight=400 ):
     boneEnds = []
     fingerBones = getFingerBones(finger, withMetacarpal=withMetacarpal)
     for bone in fingerBones:
         if withColors:
             boneEnds.append(
-                {"color": getFingerJointColor(finger, bone), "coords": getPixelLocation(bone.next_joint, mainImage)})
+                {"color": getFingerJointColor(finger, bone), "coords": getPixelLocation(bone.next_joint, mainImage, targetWidth, targetHeight)})
         else:
             boneEnds.append(getPixelLocation(bone.next_joint, mainImage))
     return boneEnds

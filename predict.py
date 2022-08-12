@@ -188,8 +188,6 @@ class tkCamera(tk.Frame):
             '64mpjoints': keras.models.load_model('64mpjoints.h5'),
 
         }
-        self.model171 = keras.models.load_model('171cropped.h5')
-        self.model64 = keras.models.load_model('64cropped.h5')
         self.classes = ['A', 'B', 'E', 'G', 'H', 'I', 'L', 'P', 'R', 'V', 'W']
 
     def get_type(self):
