@@ -14,7 +14,7 @@ def getImageFixedHeight(oldImg, newHeight, newWidth, fillVal=0, isGrayscale=True
     xCenter = (newWidth - oldWidth) // 2
     yCenter = (newHeight - oldHeight) // 2
 
-    result[yCenter: yCenter + oldHeight, xCenter:xCenter + oldWidth] = oldImg
+    result[abs(yCenter): yCenter + oldHeight, abs(xCenter):xCenter + oldWidth] = oldImg
 
     return result
 
